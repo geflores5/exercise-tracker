@@ -8,7 +8,7 @@ export default class ExercisesList extends Component {
     this.state = { exercises: [] };
   }
   componentDidMount = (e) => {
-    axios.get('http://localhost:5000/exercises/')
+    axios.get('https://api-exercise-tracker-geflores5.herokuapp.com/')
       .then(res => {
         this.setState({ exercises: res.data })
       })
@@ -17,7 +17,7 @@ export default class ExercisesList extends Component {
       })
   }
   deleteExercise = (id) => {
-    axios.delete(`http://localhost:5000/exercises/${id}`)
+    axios.delete(`https://api-exercise-tracker-geflores5.herokuapp.com/${id}`)
       .then(res => console.log(res.data))
     this.setState({
       exercises: this.state.exercises.filter(exercise => exercise._id !== id)

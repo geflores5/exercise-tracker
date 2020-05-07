@@ -17,7 +17,7 @@ export default class EditExercise extends Component {
     }
   }
   componentDidMount = () => {
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://api-exercise-tracker-geflores5.herokuapp.com/users/')
       .then(res => {
         if (res.data.length > 0) {
           this.setState({
@@ -57,7 +57,7 @@ export default class EditExercise extends Component {
 
     console.log(exercise)
 
-    axios.post(`http://localhost:5000/exercises/update/${this.state.id}`, exercise)
+    axios.post(`https://api-exercise-tracker-geflores5.herokuapp.com/exercises/update/${this.state.id}`, exercise)
     .then(res => console.log(res.data))
 
     window.location = '/'

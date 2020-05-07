@@ -17,7 +17,7 @@ export default class ExercisesList extends Component {
       })
   }
   deleteExercise = (id) => {
-    axios.delete(`https://api-exercise-tracker-geflores5.herokuapp.com/${id}`)
+    axios.delete(`https://api-exercise-tracker-geflores5.herokuapp.com/exercises/${id}`)
       .then(res => console.log(res.data))
     this.setState({
       exercises: this.state.exercises.filter(exercise => exercise._id !== id)

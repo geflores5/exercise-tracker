@@ -8,7 +8,7 @@ export default class ExercisesList extends Component {
     this.state = { exercises: [] };
   }
   componentDidMount = (e) => {
-    axios.get('https://api-exercise-tracker-geflores5.herokuapp.com/')
+    axios.get('https://api-exercise-tracker-geflores5.herokuapp.com/exercises')
       .then(res => {
         this.setState({ exercises: res.data })
       })
